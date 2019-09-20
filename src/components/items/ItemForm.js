@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 
 class ItemForm extends Component {
-  state = { name: ''}
+  state = { name: '', price: ''}
 
   handleChange = (e) => {
-    this.setState({ name: e.target.value });
+    const { name, value } = e.target
+    this.setState({ [name]: value });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addItem(this.state.name);
-    this.setState({ name: '' })
+    this.props.addItem(this.state);
+    this.setState({ name: '', price: '' })
     
   }
 
   render() {
-    const { name } = this.state;
+    const { name, price } = this.state;
 
     return(
       <form onSubmit={this.handleSubmit}>
@@ -25,6 +26,14 @@ class ItemForm extends Component {
           onChange={this.handleChange}
           required
           placeholder='Add an Item'/>
+        <input
+         onChange={this.handleChange}
+         required
+         placeholder='Price'
+         name='price'
+         value={price}
+       />
+       <input type='submit' />
       </form>
     )
   }
