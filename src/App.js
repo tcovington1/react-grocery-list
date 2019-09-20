@@ -48,10 +48,8 @@ class App extends Component {
   visibleItems = () => {
     const { items, filter } = this.state
     switch(filter) {
-      case 'In Cart':
+      case 'View Cart':
         return items.filter( t => t.in_cart )
-      case 'In Store':
-        return items.filter( t => !t.in_cart )
       default:
         return items
     }

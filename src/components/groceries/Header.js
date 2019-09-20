@@ -20,7 +20,7 @@ const filterLink = (current, name, setFilter) => {
 const Header = ({ filter, setFilter }) => (
   <div>
     {
-      ['All', 'In Cart', 'In Store'].map( f => filterLink(filter, f, setFilter))
+      ['All', 'View Cart'].map( f => filterLink(filter, f, setFilter))
     }
   </div>
 )
