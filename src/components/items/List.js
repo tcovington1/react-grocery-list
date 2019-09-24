@@ -1,8 +1,9 @@
 import React from 'react';
 import Item from './Item'
+import '../../App.css'
 
 const List = ({ items, name, price, itemClick }) => (
-  <div>
+  <div >
     <h2>{name}: {price}</h2>
     <ul>
       { items.map( item => <Item key={item.id} {...item} itemClick={itemClick} />)}

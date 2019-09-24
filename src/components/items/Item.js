@@ -12,7 +12,7 @@ const Item = ({id, name, price, in_cart, itemClick }) => (
 
 const styles = {
   item: { cursor: 'pointer'},
-  in_cart: { color: 'gray', textDecoration: 'line-through'},
+  in_cart: { color: 'red', textDecoration: 'line-through'},
 };
 
 export default Item;

@@ -1,4 +1,20 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+// import { Form, ButtonToolbar, Button } from 'react-bootstrap';
+
+const Button = styled.button`
+  color: blue;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid blue;
+  border-radius: 5px;
+
+  :hover {
+    color: green;
+    border: 2px solid green;
+  }
+`;
 
 class ItemForm extends Component {
   state = { name: '', price: ''}
@@ -25,15 +41,18 @@ class ItemForm extends Component {
           name="name"
           onChange={this.handleChange}
           required
-          placeholder='Add an Item'/>
+          placeholder='Add an Item'
+          />
         <input
          onChange={this.handleChange}
          required
          placeholder='Price'
          name='price'
          value={price}
-       />
-       <input type='submit' />
+         />
+       {/* <input type='submit' /> */}
+      
+       <Button>Submit</Button>
       </form>
     )
   }
