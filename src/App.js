@@ -62,7 +62,6 @@ visibleItems = () => {
 
   render() {
     const { items, filter } = this.state;
-
     return(
       <div>
         <Header filter={filter} setFilter={this.setFilter} />
