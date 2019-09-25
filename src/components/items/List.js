@@ -1,5 +1,7 @@
 import React from 'react';
 import Item from './Item'
+import '../../App.css'
+
 
 const List = ({ items, name, price, itemClick, remove }) => (
   <div>

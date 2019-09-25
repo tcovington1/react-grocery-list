@@ -3,8 +3,14 @@ import List from './components/items/List'
 import ItemForm from './components/items/ItemForm'
 import Header from './components/items/Header'
 import { isTSMappedType } from '@babel/types'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Layout from './components/styles/Layout'
+import styled from 'styled-components';
+import './App.css'
+import { Jumbotron } from 'react-bootstrap';
 
 class App extends Component {
+
 
 
   state = {
@@ -72,11 +78,14 @@ visibleItems = () => {
     const { filter } = this.state;
 
     return(
-      <div>
+      <Jumbotron>
+        <div className="top lead">
         <Header filter={filter} setFilter={this.setFilter} />
         <ItemForm addItem={this.addItem} />
         <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick} remove={this.removeItem} />
-      </div>
+        </div>
+       </Jumbotron>
+      
     );
   }
 }

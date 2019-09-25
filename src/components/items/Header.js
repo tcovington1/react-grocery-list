@@ -7,6 +7,7 @@ const styles = {
     color: 'blue',
     marginLeft: '5px',
     marginRight: '5px',
+    marginTop: '25px',
   }
 }
 
