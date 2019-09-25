@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const styles = {
-  link: { 
-    cursor: 'pointer', 
-    textDecoration: 'underline', 
+  link: {
+    cursor: 'pointer',
+    textDecoration: 'underline',
     color: 'blue',
     marginLeft: '5px',
     marginRight: '5px',
@@ -11,7 +11,7 @@ const styles = {
 }
 
 const filterLink = (current, name, setFilter) => {
-  if (current === name)
+  if (current === name )
     return <span>{name}</span>
   else 
     return <span style={styles.link} onClick={() => setFilter(name)}>{name}</span>
@@ -19,9 +19,7 @@ const filterLink = (current, name, setFilter) => {
 
 const Header = ({ filter, setFilter }) => (
   <div>
-    {
-      ['All', 'View Cart'].map( f => filterLink(filter, f, setFilter))
-    }
+    { [ 'All', 'Not in Cart', 'In Cart'].map( f => filterLink(filter, f, setFilter))}
   </div>
 )
 
