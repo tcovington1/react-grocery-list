@@ -33,6 +33,14 @@ class App extends Component {
     this.setState({ items: [newItem, ...items]});
   }
 
+  removeItem = (id) => {
+    const items = this.state.items.filter( item => {
+      if ( item.id !== id )
+        return item
+    })
+    this.setState({ items: [ ...items ]})
+  }
+
 handleClick = (id) => {
   const { items } = this.state;
   this.setState({
@@ -61,13 +69,13 @@ visibleItems = () => {
 }
 
   render() {
-    const { items, filter } = this.state;
+    const { filter } = this.state;
 
     return(
       <div>
         <Header filter={filter} setFilter={this.setFilter} />
         <ItemForm addItem={this.addItem} />
-        <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick}/>
+        <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick} remove={this.removeItem} />
       </div>
     );
   }
