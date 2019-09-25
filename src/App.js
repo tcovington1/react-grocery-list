@@ -67,7 +67,7 @@ visibleItems = () => {
       <div>
         <Header filter={filter} setFilter={this.setFilter} />
         <ItemForm addItem={this.addItem} />
-        <List name='Grocery List' items={this.vistibleItems()} itemClick={this.handleClick}/>
+        <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick}/>
       </div>
     );
   }
