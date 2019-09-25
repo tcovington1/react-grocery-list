@@ -39,6 +39,14 @@ class App extends Component {
     this.setState({ items: [newItem, ...items]});
   }
 
+  removeItem = (id) => {
+    const items = this.state.items.filter( item => {
+      if ( item.id !== id )
+        return item
+    })
+    this.setState({ items: [ ...items ]})
+  }
+
 handleClick = (id) => {
   const { items } = this.state;
   this.setState({
@@ -54,7 +62,7 @@ handleClick = (id) => {
   })
 }
 
-vistibleItems = () => {
+visibleItems = () => {
   const { items, filter } = this.state;
   switch(filter) {
     case 'Not in Cart':
@@ -66,19 +74,16 @@ vistibleItems = () => {
   }
 }
 
-
   render() {
-    const { items, filter } = this.state;
+    const { filter } = this.state;
 
     return(
       <Jumbotron>
         <div className="top lead">
-        {/* <Layout> */}
-          <Header filter={filter} setFilter={this.setFilter}/>
-          <ItemForm addItem={this.addItem} />
-          <List name='Grocery List' items={this.vistibleItems()} itemClick={this.handleClick}/>
-        {/* </Layout> */}
-      </div>
+        <Header filter={filter} setFilter={this.setFilter} />
+        <ItemForm addItem={this.addItem} />
+        <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick} remove={this.removeItem} />
+        </div>
        </Jumbotron>
       
     );
