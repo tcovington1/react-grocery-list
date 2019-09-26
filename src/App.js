@@ -78,12 +78,12 @@ visibleItems = () => {
     const { filter } = this.state;
 
     return(
-      <Jumbotron>
-        <div className="top lead">
-        <Header filter={filter} setFilter={this.setFilter} />
-        <ItemForm addItem={this.addItem} />
-        <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick} remove={this.removeItem} />
-        </div>
+      <Jumbotron style={{ paddingTop: "25px" }}>
+          <div className="top lead">
+          <Header filter={filter} setFilter={this.setFilter} />
+          <ItemForm addItem={this.addItem} />
+          <List name='Grocery List' items={this.visibleItems()} itemClick={this.handleClick} remove={this.removeItem} />
+          </div>
        </Jumbotron>
       
     );
